@@ -1,15 +1,15 @@
 ﻿using ControleDeBar.ConsoleApp.Compartilhado;
+using ControleDeBar.ConsoleApp.ModuloProdutos;
 using System.Collections;
 
-namespace ControleDeBar.ConsoleApp.ModuloPedidos
+namespace ControleDeBar.ModuloProdutos
 {
-    public class TelaPedidos : TelaBase
+    public class TelaProdutos : TelaBase
     {
-
-        public TelaPedidos(RepositorioPedidos repositorioPedidos)
+        public TelaProdutos(RepositorioProdutos repositorioProdutos)
         {
-            repositorioBase = repositorioPedidos;
-            nomeEntidade = "Pedidos";
+            repositorioBase = repositorioProdutos;
+            nomeEntidade = "Produtos";
             sufixo = "os";
         }
 
@@ -19,21 +19,21 @@ namespace ControleDeBar.ConsoleApp.ModuloPedidos
 
             Console.WriteLine("--------------------------------------------------------------------");
 
-            foreach (Pedidos pedidos in registros)
+            foreach (Produtos produtos in registros)
             {
-                Console.WriteLine("{0, -10} | {1, -20} | {2, -20}", numeroMesa.id, nomeGarcom.nome);
+                Console.WriteLine("{0, -10} | {1, -20} | {2, -20}", produtos.id, produtos.nome);
             }
         }
 
         protected override EntidadeBase ObterRegistro()
         {
-            Console.Write("Numero da mesa: ");
-            string numeroMesa = Console.ReadLine();
+            Console.Write("código do produto: ");
+            int idProduto = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Quantidade de lugares: ");
-            string quantidadeLugares = Console.ReadLine();
+            Console.Write("nome do produto: ");
+            string produtoNome= Console.ReadLine();
 
-            return new Mesa(numeroMesa, quantidadeLugares);
+            return new Produtos(idProduto, produtoNome);
         }
     }
 }

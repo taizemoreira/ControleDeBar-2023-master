@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using ControleDeBar.ConsoleApp.ModuloProdutos;
+using System.Collections;
 
 namespace ControleDeBar.ConsoleApp.Compartilhado
 {
-    public abstract class RepositorioBase
+    public abstract class EntidadeBase
     {
         protected ArrayList listaRegistros;
         protected int contadorRegistros = 0;
@@ -64,6 +65,11 @@ namespace ControleDeBar.ConsoleApp.Compartilhado
         public bool TemRegistros()
         {
             return listaRegistros.Count > 0;
+        }
+
+        public static implicit operator EntidadeBase(RepositorioProdutos v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

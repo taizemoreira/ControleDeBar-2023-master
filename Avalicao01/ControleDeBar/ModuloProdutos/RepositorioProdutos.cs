@@ -1,45 +1,25 @@
 ﻿using ControleDeBar.ConsoleApp.Compartilhado;
-using ControleDeBar.ConsoleApp.ModuloGarcons;
 using System.Collections.Generic;
 
-namespace ControleDeBars.ConsoleApp.ModuloProdutos
+namespace ControleDeBar.ConsoleApp.ModuloProdutos
 {
-    public class Produtos : EntidadeBase
+    public class RepositorioProdutos : EntidadeBase
     {
-        Mesa = mesa;
-        Garcom = garcom;
-        Itens = new List<ItemPedido>();
+        private List<Produtos> produtos;
 
-        public Produtos(Mesa mesa, Garcom garcom, Itens itens <ItemPedido> )
+        public RepositorioProdutos()
         {
-            this.mesa = mesa;
-            this.garcom = garcom;
-
-            this.itens.< ItemPedido > ();
+            produtos = new List<Produtos>();
         }
 
-        public class Produtos
+        public void AdicionarProduto(Produtos produto)
         {
-            private List<Produto> produtos;
+            produtos.Add(produto);
+        }
 
-            public Produtos()
-            {
-                produtos = new List<Produto>();
-            }
-
-            public void AdicionarProduto(Produto produto)
-            {
-                produtos.Add(produto);
-            }
-
-            public void RemoverProduto(Produto produto)
-            {
-                produtos.Remove(produto);
-            }
-
-            public List<Produto> ObterProdutos()
-            {
-                return produtos;
-            }
+        public List<Produtos> ObterProdutos()
+        {
+            return produtos;
         }
     }
+}

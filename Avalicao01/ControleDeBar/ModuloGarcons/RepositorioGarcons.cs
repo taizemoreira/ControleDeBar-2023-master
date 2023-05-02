@@ -1,18 +1,45 @@
-﻿using ControleDeBar.Compartilhado;
-using System.Collections;
+﻿using ControleDeBar.ConsoleApp.Compartilhado;
+using System;
+using System.Collections.Generic;
 
 namespace ControleDeBar.ConsoleApp.ModuloGarcons
 {
-    public class ControleDeBar : RepositorioBase
+    public class RepositorioGarcons : EntidadeBase
     {
-        public ControleDeBar(ArrayList listaGarcons)
+        public RepositorioGarcons repositorioGarcons = null;
+
+        private List<Garcom> garcons;
+
+        public RepositorioGarcons()
         {
-            this.listaRegistros = listaGarcons;
+            garcons = new List<Garcom>();
         }
 
-        public override Garcons SelecionarPorId(int id)
+        public void AdicionarGarcon(Garcons garcons)
         {
-            return (Garcons)base.SelecionarPorId(id);
+            garcons.Add(garcons);
+        }
+
+        public List<Garcom> ObterGarcons()
+        {
+            return garcons;
+        }
+
+        public Garcom ObterGarconPorId(int id)
+        {
+            foreach (Garcom garcons in garcons)
+            {
+                if (garcons.Id == id)
+                {
+                    return garcons;
+                }
+            }
+            return null;
+        }
+
+        internal void AdicionarGarcom(Garcom joaoAmorim)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -7,7 +7,7 @@ namespace ControleDeBar.ConsoleApp.Compartilhado
         public string nomeEntidade;
         public string sufixo;
 
-        protected RepositorioBase repositorioBase = null;
+        protected EntidadeBase repositorioBase = null;
 
         public void MostrarCabecalho(string titulo, string subtitulo)
         {

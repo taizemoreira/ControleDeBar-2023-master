@@ -7,6 +7,8 @@ namespace ControleDeBar.ConsoleApp.ModuloMesas
     {
         public string numeroMesa;
         public int quantidadeLugares;
+        public int mesa;
+        
 
         public Mesas(string numeroMesa, int quantidadeLugares)
         {
@@ -18,9 +20,12 @@ namespace ControleDeBar.ConsoleApp.ModuloMesas
         {
             Mesas mesaAtualizada = (Mesas)registroAtualizado;
 
-            this.numeroMesa = garconAtualizado.nome;
-            this.quantidadeLugares = garconAtualizado.cpf;
+            this.numeroMesa = numeroMesa;
+            this.quantidadeLugares = quantidadeLugares;
         }
-
+        public override ArrayList Validar()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

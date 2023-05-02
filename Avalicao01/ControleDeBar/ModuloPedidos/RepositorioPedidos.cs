@@ -1,49 +1,50 @@
 ﻿using ControleDeBar.ConsoleApp.Compartilhado;
 using ControleDeBar.ConsoleApp.ModuloGarcons;
+using ControleDeBar.ConsoleApp.ModuloPedidos;
 using System.Collections;
 
-namespace ControleDeBars.ConsoleApp.ModuloPedidos
+namespace ControleDeBar.ModuloPedidos
 {
-    public class Pedidos : EntidadeBase
+    public class RepositorioPedidos : EntidadeBase
     {
-        Mesa = mesa;
-        Garcom = garcom;
-        Itens = new List<ItemPedido>();
+        private List<Pedidos> pedidos;
 
-        public Pedidos(Mesa mesa, Garcom garcom, Itens itens <ItemPedido> )
+        public RepositorioPedidos()
         {
-            this.mesa = mesa;
-            this.garcom = garcom;
-
-            this.itens.< ItemPedido > ();
+            pedidos = new List<Pedidos>();
         }
 
-        public void AdicionarItem(ItemPedido item)
+        public void AdicionarPedido(Pedidos pedidos)
         {
-            Itens.Add(item);
+            pedidos.Add(pedidos);
         }
 
-        public void RemoverItem(ItemPedido item)
+        public override void AtualizarInformacoes(EntidadeBase registroAtualizado)
         {
-            Itens.Remove(item);
+            throw new NotImplementedException();
         }
 
-        public decimal CalcularTotal()
+        public List<Pedidos> ObterPedidos()
         {
-            decimal total = 0;
-            foreach (var item in Itens)
+            return pedidos;
+        }
+
+        public List<Pedidos> ObterPedidosPorMesa(int numeroMesa)
+        {
+            List<Pedidos> pedidosPorMesa = new List<Pedidos>();
+            foreach (Pedidos pedidos in pedidos)
             {
-                total += item.Subtotal;
+                if (pedidos.Mesa == numeroMesa)
+                {
+                    pedidosPorMesa.Add(pedidos);
+                }
             }
-            return total;
+            return pedidosPorMesa;
         }
-    }
 
-    public class ItemPedido
-    {
-        public Produto Produto { get; set; }
-        public int Quantidade { get; set; }
-
-        public decimal Subtotal => Produto.Preco * Quantidade;
+        public override ArrayList Validar()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

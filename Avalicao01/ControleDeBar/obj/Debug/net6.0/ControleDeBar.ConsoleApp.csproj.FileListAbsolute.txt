@@ -1,0 +1,5 @@
+C:\Projetos Visual Studio\ControleDeBar-2023-master\Avalicao01\ControleDeBar\obj\Debug\net6.0\ControleDeBar.ConsoleApp.csproj.AssemblyReference.cache
+C:\Projetos Visual Studio\ControleDeBar-2023-master\Avalicao01\ControleDeBar\obj\Debug\net6.0\ControleDeBar.ConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos Visual Studio\ControleDeBar-2023-master\Avalicao01\ControleDeBar\obj\Debug\net6.0\ControleDeBar.ConsoleApp.AssemblyInfoInputs.cache
+C:\Projetos Visual Studio\ControleDeBar-2023-master\Avalicao01\ControleDeBar\obj\Debug\net6.0\ControleDeBar.ConsoleApp.AssemblyInfo.cs
+C:\Projetos Visual Studio\ControleDeBar-2023-master\Avalicao01\ControleDeBar\obj\Debug\net6.0\ControleDeBar.ConsoleApp.csproj.CoreCompileInputs.cache
